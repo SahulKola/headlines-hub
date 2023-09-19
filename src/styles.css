@@ -7,3 +7,12 @@
 * {
   font-family: "Merriweather", "Times New Roman", Times, serif;
 }
+body {
+  background-color: #ccc;
+}
+
+@layer base {
+  .container {
+    @apply px-8 mx-auto;
+  }
+}
