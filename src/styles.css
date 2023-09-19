@@ -15,4 +15,17 @@ body {
   .container {
     @apply px-8 mx-auto;
   }
+  .custom-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 15px;
+  }
+  .custom-hover img {
+    transition: transform 0.15s ease-in;
+    cursor: pointer;
+  }
+  .custom-hover:hover img {
+    transform: scale(1.2);
+    transition: transform 0.15s ease-in;
+  }
 }
