@@ -1,30 +1,26 @@
-<div class="container custom-grid">
-    <article class="mt-5 flex flex-col items-stretch justify-between min-h-[350px]">
-        <section>
-            <div
-                class="custom-hover relative overflow-hidden h-44 before:content-[''] before:block before:absolute before:left-0 before:bottom-0  before:z-10 before:w-full before:h-1/2 before:bg-gradient-to-t before:from-black before:to-transparent before:cursor-pointer ">
-                <img class="w-full h-full object-cover" src="assets/image.jpg" alt="Iphone 15">
-                <p class="text-sm absolute bottom-2 right-2 font-sans text-white z-20"><span
-                        class="font-sans font-bold">Author:
-                    </span>Joe
-                    Rossignol</p>
-            </div>
-            <div class="my-2">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti, fugit esse omnis magnam numquam
-                    sint nobis itaque odit enim, obcaecati dolorum? Doloremque repudiandae, eius eveniet sit vero
-                    cupiditate maiores libero!</p>
-                <p class="font-sans mt-2"><span class="font-sans font-bold">Source: </span>Random</p>
-            </div>
-        </section>
+<article class="flex flex-col items-stretch justify-between h-full">
+    <section>
         <div
-            class="flex items-center justify-center gap-3 bg-red-500 px-3 py-2 text-white rounded-lg md:self-end md:max-w-full cursor-pointer">
-            <div class="text ">Read More</div>
-            <div class="cta"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">
-                    <path
-                        d="M 19.980469 2.9902344 A 1.0001 1.0001 0 0 0 19.869141 3 L 15 3 A 1.0001 1.0001 0 1 0 15 5 L 17.585938 5 L 8.2929688 14.292969 A 1.0001 1.0001 0 1 0 9.7070312 15.707031 L 19 6.4140625 L 19 9 A 1.0001 1.0001 0 1 0 21 9 L 21 4.1269531 A 1.0001 1.0001 0 0 0 19.980469 2.9902344 z M 5 3 C 3.9069372 3 3 3.9069372 3 5 L 3 19 C 3 20.093063 3.9069372 21 5 21 L 19 21 C 20.093063 21 21 20.093063 21 19 L 21 13 A 1.0001 1.0001 0 1 0 19 13 L 19 19 L 5 19 L 5 5 L 11 5 A 1.0001 1.0001 0 1 0 11 3 L 5 3 z"
-                        fill="#fff" />
-                </svg>
-            </div>
+            class="custom-hover relative overflow-hidden h-44 before:content-[''] before:block before:absolute before:left-0 before:bottom-0  before:z-10 before:w-full before:h-1/2 before:bg-gradient-to-t before:from-black before:to-transparent before:cursor-pointer ">
+            <img class="w-full h-full object-cover" [src]="article.urlToImage ?? 'assets/image.jpg'"
+                [alt]="article.title">
+            <p class="text-sm absolute bottom-2 right-2 font-sans text-white z-20"><span
+                    class="font-sans font-bold">Author:
+                </span>{{article.author ?? article.source.name }}</p>
         </div>
-    </article>
-</div>
+        <div class="my-2">
+            <p>{{article.description ?? article.title }}</p>
+            <p class="font-sans mt-2"><span class="font-sans font-bold">Source: </span>{{article.source.name}}</p>
+        </div>
+    </section>
+    <a [href]="article.url" target="_blank"
+        class="flex items-center justify-center gap-3 bg-red-500 px-3 py-2 text-white rounded-lg md:self-end md:max-w-full cursor-pointer">
+        <div class="text ">Read More</div>
+        <div class="cta"><svg xmlns="https://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24px" height="24px">
+                <path
+                    d="M 19.980469 2.9902344 A 1.0001 1.0001 0 0 0 19.869141 3 L 15 3 A 1.0001 1.0001 0 1 0 15 5 L 17.585938 5 L 8.2929688 14.292969 A 1.0001 1.0001 0 1 0 9.7070312 15.707031 L 19 6.4140625 L 19 9 A 1.0001 1.0001 0 1 0 21 9 L 21 4.1269531 A 1.0001 1.0001 0 0 0 19.980469 2.9902344 z M 5 3 C 3.9069372 3 3 3.9069372 3 5 L 3 19 C 3 20.093063 3.9069372 21 5 21 L 19 21 C 20.093063 21 21 20.093063 21 19 L 21 13 A 1.0001 1.0001 0 1 0 19 13 L 19 19 L 5 19 L 5 5 L 11 5 A 1.0001 1.0001 0 1 0 11 3 L 5 3 z"
+                    fill="#fff" />
+            </svg>
+        </div>
+    </a>
+</article>
