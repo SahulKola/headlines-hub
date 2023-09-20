@@ -29,12 +29,19 @@
 </nav>
 <section class="bg-gray-200">
     <ul class="flex flex-wrap items-center justify-start container gap-x-5 gap-y-2 py-2">
-        <li><a class="" href="">General</a></li>
-        <li><a class="block" href="/">Bussiness</a></li>
-        <li><a href="/">Technology</a></li>
-        <li><a href="/">Entertainment</a></li>
-        <li><a href="/">Health</a></li>
-        <li><a href="/" class="font-bold">Sports</a></li>
-        <li><a href="/">Science</a></li>
+        <li><a routerLink="/category/general" routerLinkActive="font-bold"
+                [routerLinkActiveOptions]="{exact:true}">General</a></li>
+        <li><a routerLink="/category/business" routerLinkActive="font-bold"
+                [routerLinkActiveOptions]="{exact:true}">Business</a></li>
+        <li><a routerLink="/category/technology" routerLinkActive="font-bold"
+                [routerLinkActiveOptions]="{exact:true}">Technology</a></li>
+        <li><a routerLink="/category/health" routerLinkActive="font-bold"
+                [routerLinkActiveOptions]="{exact:true}">Health</a></li>
+        <li><a routerLink="/category/entertainment" routerLinkActive="font-bold"
+                [routerLinkActiveOptions]="{exact:true}">Entertainment</a></li>
+        <li><a routerLink="/category/sports" routerLinkActive="font-bold"
+                [routerLinkActiveOptions]="{exact:true}">Sports</a></li>
+        <li><a routerLink="/category/science" routerLinkActive="font-bold"
+                [routerLinkActiveOptions]="{exact:true}">Science</a></li>
     </ul>
 </section>
