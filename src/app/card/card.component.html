@@ -2,11 +2,9 @@
     <section>
         <div
             class="custom-hover relative overflow-hidden h-44 before:content-[''] before:block before:absolute before:left-0 before:bottom-0  before:z-10 before:w-full before:h-1/2 before:bg-gradient-to-t before:from-black before:to-transparent before:cursor-pointer ">
-            <img class="w-full h-full object-cover" [src]="article.urlToImage ?? 'assets/image.jpg'"
-                [alt]="article.title">
-            <p class="text-sm absolute bottom-2 right-2 font-sans text-white z-20"><span
-                    class="font-sans font-bold">Author:
-                </span>{{article.author ?? article.source.name }}</p>
+            <img class="w-full h-full object-cover" [src]="article.image ?? 'assets/image.jpg'" [alt]="article.title">
+            <p class="text-sm absolute bottom-2 right-2 font-sans text-white z-20">{{ article.publishedAt | date:'short'
+                }}</p>
         </div>
         <div class="my-2">
             <p>{{article.description ?? article.title }}</p>

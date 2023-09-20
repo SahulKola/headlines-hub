@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { NewsService } from '../services/news.service';
 
 @Component({
   selector: 'app-nav',
@@ -7,6 +8,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./nav.component.css'],
 })
 export class NavComponent {
+  constructor(private http: NewsService) {}
   searchForm = new FormGroup({
     text: new FormControl('', [
       Validators.required,

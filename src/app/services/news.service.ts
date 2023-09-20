@@ -16,10 +16,11 @@ export class NewsService {
     'general',
   ];
   constructor(private http: HttpClient) {}
-  apiKey = '&apiKey=3d12376c6ca54ee2b35682486a3ed245';
+  apiKey = '&apikey=3a28524c4bdcd6927a65f24a01da97ba';
+
   baseEverythingUrl = 'https://newsapi.org/v2/everything?q=';
 
-  baseInUrl = `https://newsapi.org/v2/top-headlines?country=in&category=`;
+  baseInUrl = `https://gnews.io/api/v4/top-headlines?lang=en&country=in&category=`;
   fetchIntNews(q: string): Observable<IRoot> {
     const url = `${this.baseEverythingUrl}${q}${this.apiKey}`;
     return this.http.get<IRoot>(url);

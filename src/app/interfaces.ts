@@ -1,21 +1,19 @@
 export interface IRoot {
-  status: string;
-  totalResults: number;
+  totalArticles: number;
   articles: IArticle[];
 }
 
 export interface IArticle {
-  source: ISource;
-  author?: string;
   title: string;
-  description?: string;
+  description: string;
+  content: string;
   url: string;
-  urlToImage?: string;
+  image: string;
   publishedAt: string;
-  content?: string;
+  source: ISource;
 }
 
 export interface ISource {
-  id?: string;
-  name?: string;
+  name: string;
+  url: string;
 }
