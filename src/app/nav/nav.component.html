@@ -1,7 +1,7 @@
 <nav>
     <header class="flex flex-col gap-2 md:gap-2 md:flex-row items-center justify-between py-2 container">
         <a routerLink="/">
-            <p class="font-black text-3xl text-black">Headlines Hub<span class="text-red-700">.</span></p>
+            <p class="font-black text-3xl text-black">Headlines Hub<span class="text-accent-normal">.</span></p>
         </a>
         <form class="w-full md:w-1/3 lg:w-1/4" [formGroup]="searchForm" (ngSubmit)="onSubmit()">
             <div
@@ -9,7 +9,7 @@
                 <input [formControl]="searchForm.controls.text" name="text" type="text" placeholder="Search..."
                     class="bg-transparent outline-none rounded-full pl-4 pr-10 h-full w-full font-sans">
                 <button [disabled]="searchForm.controls.text.dirty && searchForm.invalid" type="submit"
-                    class="disabled:bg-gray-300 disabled:cursor-not-allowed  absolute flex items-center justify-center top-1/2 right-1 -translate-y-1/2 w-8 h-8 bg-red-700 text-white rounded-full text-center">
+                    class="disabled:bg-gray-300 disabled:cursor-not-allowed  absolute flex items-center justify-center top-1/2 right-1 -translate-y-1/2 w-8 h-8 bg-accent-normal text-white rounded-full text-center">
                     <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                         <path
                             d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"
@@ -27,10 +27,12 @@
         </form>
     </header>
 </nav>
-<section class="bg-gray-200">
+<section class="bg-gray-200 mb-2">
     <ul class="flex flex-wrap items-center justify-start container gap-x-5 gap-y-2 py-2">
-        <li><a routerLink="/category/general" routerLinkActive="font-bold"
-                [routerLinkActiveOptions]="{exact:true}">General</a></li>
+        <li><a routerLink="/category/world" routerLinkActive="font-bold"
+                [routerLinkActiveOptions]="{exact:true}">World</a></li>
+        <li><a routerLink="/category/nation" routerLinkActive="font-bold"
+                [routerLinkActiveOptions]="{exact:true}">Nation</a></li>
         <li><a routerLink="/category/business" routerLinkActive="font-bold"
                 [routerLinkActiveOptions]="{exact:true}">Business</a></li>
         <li><a routerLink="/category/technology" routerLinkActive="font-bold"

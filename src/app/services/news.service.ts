@@ -14,13 +14,15 @@ export class NewsService {
     'science',
     'business',
     'sports',
-    'general',
+    'world',
+    'nation',
   ];
   constructor(private http: HttpClient) {}
 
   // apiKey = '&apikey=3a28524c4bdcd6927a65f24a01da97ba';
   // apiKey = '&apikey=e1d511adf953922221c06ffeb20180da';
-  apiKey = '&apikey=7383be19432b6f431a6cc47dcb26bc36';
+  // apiKey = '&apikey=7383be19432b6f431a6cc47dcb26bc36';
+  apiKey = '&apikey=964f608fe92899c2ce6e20a057181058';
 
   baseEverythingUrl = 'https://gnews.io/api/v4/search?lang=en&q=';
 
@@ -35,7 +37,7 @@ export class NewsService {
     if (this.categories.includes(category) || category === '') {
       return this.http.get<IRoot>(url);
     } else {
-      return of('Not Round');
+      return of('Not Found');
     }
   }
 }
