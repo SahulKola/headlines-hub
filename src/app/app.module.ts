@@ -9,6 +9,7 @@ import { NavComponent } from './nav/nav.component';
 import { CardComponent } from './card/card.component';
 import { CardContainerComponent } from './card-container/card-container.component';
 import { FooterComponent } from './footer/footer.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import { FooterComponent } from './footer/footer.component';
     CardComponent,
     CardContainerComponent,
     FooterComponent,
+    NotfoundComponent,
   ],
   imports: [
     BrowserModule,

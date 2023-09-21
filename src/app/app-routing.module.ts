@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { CardContainerComponent } from './card-container/card-container.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 const routes: Routes = [
   {
     path: '',
@@ -15,6 +16,11 @@ const routes: Routes = [
   {
     path: 'search',
     component: CardContainerComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: '**',
+    component: NotfoundComponent,
     pathMatch: 'full',
   },
 ];
