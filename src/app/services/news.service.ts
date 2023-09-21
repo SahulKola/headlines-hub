@@ -1,7 +1,8 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnChanges } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 import { IRoot } from '../interfaces';
-import { Observable, of } from 'rxjs';
+import { Observable, Subject, of } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
@@ -16,9 +17,12 @@ export class NewsService {
     'general',
   ];
   constructor(private http: HttpClient) {}
-  apiKey = '&apikey=3a28524c4bdcd6927a65f24a01da97ba';
 
-  baseEverythingUrl = 'https://newsapi.org/v2/everything?q=';
+  // apiKey = '&apikey=3a28524c4bdcd6927a65f24a01da97ba';
+  // apiKey = '&apikey=e1d511adf953922221c06ffeb20180da';
+  apiKey = '&apikey=7383be19432b6f431a6cc47dcb26bc36';
+
+  baseEverythingUrl = 'https://gnews.io/api/v4/search?lang=en&q=';
 
   baseInUrl = `https://gnews.io/api/v4/top-headlines?lang=en&country=in&category=`;
   fetchIntNews(q: string): Observable<IRoot> {

@@ -1,3 +1,4 @@
+import { ActivatedRoute, Router } from '@angular/router';
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { NewsService } from '../services/news.service';
@@ -8,7 +9,11 @@ import { NewsService } from '../services/news.service';
   styleUrls: ['./nav.component.css'],
 })
 export class NavComponent {
-  constructor(private http: NewsService) {}
+  constructor(
+    private http: NewsService,
+    private router: Router,
+    private route: ActivatedRoute
+  ) {}
   searchForm = new FormGroup({
     text: new FormControl('', [
       Validators.required,
@@ -17,7 +22,12 @@ export class NavComponent {
     ]),
   });
   onSubmit() {
-    console.log(this.searchForm.value.text);
+    this.router.navigate(['/'], {
+      queryParams: {
+        search: this.searchForm.value.text as string,
+      },
+      queryParamsHandling: 'merge',
+    });
     this.searchForm.controls.text.reset('');
   }
 }

@@ -5,10 +5,17 @@ const routes: Routes = [
   {
     path: '',
     component: CardContainerComponent,
+    pathMatch: 'full',
   },
   {
     path: 'category/:type',
     component: CardContainerComponent,
+    pathMatch: 'full',
+  },
+  {
+    path: 'search',
+    component: CardContainerComponent,
+    pathMatch: 'full',
   },
 ];
 
