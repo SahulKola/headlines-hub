@@ -26,6 +26,7 @@ body {
   }
   .custom-hover img {
     transition: transform 0.15s ease-in;
+    background: url("assets/image.jpg");
     cursor: pointer;
   }
   .custom-hover:hover img {

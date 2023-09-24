@@ -18,7 +18,10 @@ export class CardContainerComponent implements OnInit {
     this.route.queryParams.subscribe((params: Params) => {
       if (params['search']) {
         this.http.fetchIntNews(params['search']).subscribe((data: IRoot) => {
-          console.log(data.articles);
+          this.articles = data.articles;
+        });
+      } else if (this.router.url === '/') {
+        this.http.fetchNews().subscribe((data: IRoot) => {
           this.articles = data.articles;
         });
       } else {
@@ -33,10 +36,5 @@ export class CardContainerComponent implements OnInit {
         });
       }
     });
-    if (this.router.url === '/') {
-      this.http.fetchNews().subscribe((data: IRoot) => {
-        this.articles = data.articles;
-      });
-    }
   }
 }
