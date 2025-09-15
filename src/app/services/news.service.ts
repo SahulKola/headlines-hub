@@ -22,7 +22,7 @@ export class NewsService {
   // apiKey = '&apikey=3a28524c4bdcd6927a65f24a01da97ba';
   // apiKey = '&apikey=e1d511adf953922221c06ffeb20180da';
   // apiKey = '&apikey=7383be19432b6f431a6cc47dcb26bc36';
-  apiKey = '&apikey=964f608fe92899c2ce6e20a057181058';
+  apiKey = '&apikey=4674321b74af7cbe7066b26b0aca6de9';
 
   baseEverythingUrl = 'https://gnews.io/api/v4/search?lang=en&q=';
 
